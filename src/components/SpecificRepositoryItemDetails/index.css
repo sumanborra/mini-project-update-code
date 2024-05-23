@@ -1,0 +1,126 @@
+.specific-repository-item-details {
+  background-color: #7fb5ba;
+  min-height: 90vh;
+  padding: 20px;
+}
+.list-container-repositor-item-details {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.specific-item-details-list-item {
+  margin: 10px;
+  background-color: #e1dee3;
+  border: 1px solid #a61ceb;
+  border-radius: 22px;
+  padding: 10px;
+  color: #6346a4;
+}
+.text-repository-name {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 600;
+  color: #576319;
+  padding-left: 55px;
+}
+.text-repository-description {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 600;
+  color: #187051;
+  padding-left: 55px;
+}
+@media screen and (max-width: 767px) {
+  .text-repository-description {
+    font-size: 12px;
+  }
+}
+.contributors-count-container {
+  border: 1px solid #0852a6;
+  background-color: transparent;
+  width: 30%;
+  margin: 20px;
+  color: #0852a6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contributors-main-cout-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.count-text {
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: #0852a6;
+}
+
+.repo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.try-again-button {
+  background-color: #3463e3;
+  color: #ffffff;
+  border-radius: 12px;
+  height: 40px;
+  width: 100px;
+}
+.success-view-container-specific-item-details {
+  background-color: transparent;
+  border-radius: 14px;
+  padding-top: 20px;
+}
+.count-text-title-contributors {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 800;
+  color: #0852a6;
+}
+.contributors-avatar-container {
+  margin-left: 40px;
+}
+.specific-item-details-avtar-contributors {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contributors-images {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+.languages-text-contributors {
+  font-family: 'Roboto';
+  font-weight: 800;
+  color: #0852a6;
+  margin-left: 40px;
+}
+.remaing-images-in-contributors {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 600;
+  margin: 10px;
+}
+.contributors-avatar-images-and-remaing-main-container {
+  display: flex;
+  align-items: center;
+}
+.dark {
+  background-color: #080b11;
+}
+.darkLightt {
+  border: #222835;
+}

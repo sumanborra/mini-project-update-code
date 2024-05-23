@@ -1,0 +1,40 @@
+.Not-found-page-main-container {
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #22232b;
+}
+.not-found-image {
+  height: 400px;
+  width: 500px;
+  border-radius: 5px;
+}
+.text-page-not-found {
+  font-family: 'Roboto';
+  font-size: 22px;
+  font-weight: 800;
+  color: #557ae0;
+  line-height: 0.2;
+}
+.text-page-not-found-para {
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 800;
+  color: #9e92a1;
+  line-height: 0.2;
+}
+.bo-to-home-button{
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  background-color: #253df5;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+}

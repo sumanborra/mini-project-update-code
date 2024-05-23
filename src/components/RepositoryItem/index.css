@@ -1,0 +1,47 @@
+.list-items-repository {
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  background-color: #c1d5e6;
+  border-radius: 14px;
+}
+.name-repo {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 600;
+  color: #9855c2;
+}
+.descript {
+  font-family: 'Roboto';
+  font-size: 16px;
+
+  color: #e31bbe;
+}
+@media screen and (max-width: 767px) {
+  .descript {
+    font-size: 12px;
+  }
+}
+.list-container-items-repos {
+  list-style-type: none;
+  margin: 5px;
+  display: flex;
+  padding: 0px;
+
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+.languages-items {
+  margin: 10px;
+  background-color: #e1dee3;
+  border: 1px solid #a61ceb;
+  border-radius: 22px;
+  padding: 10px;
+  color: #6346a4;
+}
+.link-styles {
+  text-decoration: none;
+}
+.darkLight {
+  background-color: #21242a;
+}

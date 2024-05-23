@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.legend-container {
+  display: flex;
+  margin: 5px;
+  flex-wrap: wrap;
+}

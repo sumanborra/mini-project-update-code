@@ -1,0 +1,110 @@
+.specific-repository-main-container {
+  background-color: #7fb5ba;
+  min-height: 90vh;
+  padding: 20px;
+}
+.list-container-repositor {
+  list-style-type: none;
+  background-color: transparent;
+}
+.text-repository {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 55px;
+}
+
+.repo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.try-again-button {
+  background-color: #3463e3;
+  color: #ffffff;
+  border-radius: 12px;
+  height: 40px;
+  width: 100px;
+}
+.no-data-found-main-container {
+  height: 90vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.no-data-found-image {
+  height: 300px;
+  width: 300px;
+}
+@media screen and (max-width: 767px) {
+  .no-data-found-image {
+    height: 200px;
+    width: 200px;
+  }
+}
+.text-no-data-found {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 800;
+  color: #3463e3;
+}
+.text-no-data-found-para {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #4a4c4c;
+}
+.button-no-data-found {
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3463e3;
+  font-family: 'Roboto';
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffffff;
+}
+@media screen and (max-width: 767px) {
+  .text-no-data-found {
+    font-size: 16px;
+  }
+  .text-no-data-found-para {
+    font-size: 10px;
+  }
+  .button-no-data-found {
+    height: 30px;
+    width: 80px;
+    font-size: 12px;
+  }
+}
+.no-analysis-found-main-container {
+  background-color: #252627;
+  height: 90vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.no-analysis-found-image {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+}
+.text-no-analysis {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.dark {
+  background-color: #080b11;
+}
+.success-view-container {
+  background-color: transparent;
+}

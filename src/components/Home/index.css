@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+.Home-main-container {
+  min-height: 90vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #7fb5ba;
+}
+.search-container {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.input-element {
+  height: 40px;
+  width: 380px;
+  padding: 10px;
+  font-size: 24px;
+  border: none;
+  font-family: 'Roboto';
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+@media screen and (max-width: 767px) {
+  .search-container {
+    padding: 10px;
+  }
+  .input-element {
+    height: 35px;
+    width: 220px;
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+.button-search-icon {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.error-mesg {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #ba0f06;
+}
+.git-details-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .error-mesg {
+    font-size: 14px;
+  }
+  .git-details-container {
+    padding: 15px;
+  }
+}
+.image-avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+}
+.user-name {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #0e2a70;
+  text-align: center;
+  font-weight: 600;
+}
+@media screen and (max-width: 767px) {
+  .image-avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+  }
+  .user-name {
+    font-size: 14px;
+  }
+}
+.bio-text {
+  font-weight: normal;
+  line-height: 0.2;
+}
+.follower-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.sub-container {
+  display: flex;
+}
+.line-text-container {
+  margin-right: 5px;
+}
+.bottom-container {
+  width: 100%;
+  margin-top: 20px;
+}
+.followers-text {
+  font-family: 'Roboto';
+  font-size: 28px;
+  font-weight: 600;
+  color: #3463e3;
+}
+.text-follosers-result {
+  font-family: 'Roboto';
+  font-size: 28px;
+
+  color: #e36934;
+  line-height: 0.1;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .followers-text {
+    font-size: 16px;
+  }
+  .text-follosers-result {
+    font-size: 16px;
+  }
+}
+.hr-line {
+  border: 2px solid #826e65;
+  margin-left: 30px;
+}
+.bottom-text {
+  font-size: 18px;
+}
+.bottom-result-text {
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .bio-text {
+    font-size: 10px;
+  }
+  .bottom-result-text {
+    font-size: 8px;
+  }
+}
+.no-profile-view {
+  height: 90vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.img-no-profile {
+  height: 260px;
+  width: 500px;
+  border-radius: 16px;
+  background-color: transparent;
+}
+@media screen and (max-width: 767px) {
+  .img-no-profile {
+    height: 150px;
+    width: 300px;
+  }
+}
+.repo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.something-wrong-text {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+}
+@media screen and (max-width: 767px) {
+  .something-wrong-text {
+    font-size: 18px;
+  }
+}
+.try-again-button {
+  background-color: #3463e3;
+  color: #ffffff;
+  border-radius: 12px;
+  height: 40px;
+  width: 100px;
+}
+.something-wrong-text-home-github {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 0.5;
+  padding-top: 0px;
+}
+.icon-text-home-page-for-react-icons {
+  display: flex;
+  align-items: center;
+}
+.dark {
+  background-color: #080b11;
+}
