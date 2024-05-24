@@ -23,9 +23,7 @@ const SpecificRepository = props => {
 
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
-    const response = await fetch(
-      `https://apis2.ccbp.in/gpv/repos/${userName}`,
-    )
+    const response = await fetch(`https://apis2.ccbp.in/gpv/repos/${userName}`)
     const datare = await response.json()
 
     if (response.ok === true) {
