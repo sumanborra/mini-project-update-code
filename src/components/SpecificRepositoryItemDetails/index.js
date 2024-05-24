@@ -36,6 +36,8 @@ const SpecificRepositoryItemDetails = props => {
         languages: datare.lanuages,
         description: datare.description,
         openIssueCount: datare.open_issues_count,
+        stargazersCount: datare.stargazers_count,
+        forksCount: datare.forks_count,
       }
 
       setRepositorLists(updateData)
@@ -92,6 +94,8 @@ const SpecificRepositoryItemDetails = props => {
           ))}
         </ul>
         <div className='contributors-main-cout-container'>
+          <p className='count-text'>{repostoryLists.forksCount}</p>
+          <p className='count-text'>{repostoryLists.stargazersCount}</p>
           <div className='contributors-count-container'>
             <p className='count-text'>Watchers Counts</p>
             <p className='count-text'>{repostoryLists.contributors.length}</p>

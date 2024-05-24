@@ -34,6 +34,10 @@ const SpecificRepository = props => {
         id: each.id,
         name: each.name,
         languages: each.languages,
+        login: each.owner.login,
+        avatarUrl: each.owner.avatar_url,
+        stargazersCount: each.stargazers_count,
+        forksCount: each.forks_count,
       }))
 
       setRepositorLists(updateList)
@@ -96,6 +100,7 @@ const SpecificRepository = props => {
     <>
       {repostoryLists.length === 0 && (
         <div className="no-analysis-found-main-container">
+          <h1 className="text-repository">Repositories</h1>
           <img
             src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187331/Layer_3_udr2er.png"
             alt="no repositories"

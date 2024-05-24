@@ -45,3 +45,20 @@
 .darkLight {
   background-color: #21242a;
 }
+.image-avatar-repo {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  
+}
+.text-repository {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 55px;
+}
+.profile-repos-image-conatiner{
+  display: flex;
+  align-items: center;
+}

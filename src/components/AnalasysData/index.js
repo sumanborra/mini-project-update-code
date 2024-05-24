@@ -34,8 +34,10 @@ const AnalasysData = props => {
         languagePerRepos: datare.langRepoCount,
         repoCommitCount: datare.repoCommitCount,
         quarterCommitCount: datare.quarterCommitCount,
+        avatarUrl: datare.user.avatarUrl,
+        login: datare.user.login,
       }
-
+      console.log(updateData)
       setRepositorLists(updateData)
       setApiStatusValue(apiStatus.success)
     } else if (datare.error_msg === 'Invalid username') {
@@ -65,7 +67,7 @@ const AnalasysData = props => {
         alt="failure view"
         className="img-no-profile"
       />
-      <p className="something-wrong-text">Something went wrong</p>
+      <p className="something-wrong-text">Something went wrong. Please try again</p>
       <button type="button" className="try-again-button" onClick={recallApi}>
         Try Again
       </button>
@@ -96,6 +98,8 @@ const AnalasysData = props => {
       languagePerRepos,
       repoCommitCount,
       quarterCommitCount,
+      avatarUrl,
+      login,
     } = repostoryLists
 
     return (
@@ -117,6 +121,14 @@ const AnalasysData = props => {
           >
             <div>
               <h1 className="languages-text-contributors">Analysis</h1>
+              <div className="analysis-avatar-image-container">
+                <img
+                  src={avatarUrl}
+                  alt={login}
+                  className="analysis-avtar-image"
+                />
+                <h1 className="languages-text-contributors">{login}</h1>
+              </div>
               <LinearChartData quarterCommitCount={quarterCommitCount} />
             </div>
             <div>
@@ -127,6 +139,7 @@ const AnalasysData = props => {
                 languages={languagePerCommit}
                 languagesRepo={languagePerRepos}
                 repoCommitCount={repoCommitCount}
+                quarterCommitCount={quarterCommitCount}
               />
             </div>
           </div>

@@ -37,6 +37,7 @@ class Home extends Component {
     const response = await fetch(url)
 
     const data = await response.json()
+    console.log(data)
     if (response.ok === true) {
       const updateData = {
         avatarUrl: data.avatar_url,
@@ -49,6 +50,8 @@ class Home extends Component {
         name: data.name,
         publicRepos: data.public_repos,
         organizationUrl: data.organizations_url,
+        login:data.login,
+        blog:data.blog
       }
 
       this.setState({
@@ -88,11 +91,14 @@ class Home extends Component {
       company,
       organizationUrl,
       location,
+      login,
+      blog
     } = userDetails
     return (
       <div className="git-details-container">
-        <img src={avatarUrl} alt="avatar" className="image-avatar" />
-        <p className="user-name">{name}</p>
+        <img src={avatarUrl} alt={name} className="image-avatar" />
+        <h1 className="user-name">{name}</h1>
+        <p className="user-name bio-text">{login}</p>
         <p className="user-name">BIO</p>
         <p className="user-name bio-text">{bio}</p>
         <div className="follower-container">
@@ -136,7 +142,7 @@ class Home extends Component {
               <div className="icon-text-home-page-for-react-icons">
                 <IoMdLink color="#a51ac4" />
                 <p className="text-follosers-result bottom-result-text">
-                  {organizationUrl}
+                  {blog}
                 </p>
               </div>
             </div>
@@ -164,10 +170,10 @@ class Home extends Component {
       </p>
       <img
         src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1712129835/Group_7522_ym73jg.png"
-        alt="noProfile"
+        alt="failure view"
         className="img-no-profile"
       />
-      <p className="something-wrong-text">Something went wrong</p>
+      <p className="something-wrong-text">Something went wrong. Please try again</p>
       <button
         type="button"
         className="try-again-button"

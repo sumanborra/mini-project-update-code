@@ -2,7 +2,7 @@ import {PieChart, Pie, Legend, Cell, ResponsiveContainer} from 'recharts'
 import './index.css'
 
 const PieChartCustomAnalysis = props => {
-  const {languages, languagesRepo, repoCommitCount} = props
+  const {languages, languagesRepo, repoCommitCount, quarterCommitCount} = props
 
   const data = []
   Object.entries(languages).map((key, value) => data.push({name: key, value}))
@@ -11,7 +11,7 @@ const PieChartCustomAnalysis = props => {
     data1.push({name: key, value}),
   )
   const data2 = []
-  Object.entries(repoCommitCount).map((key, value) =>
+  Object.entries(quarterCommitCount).map((key, value) =>
     data2.push({name: key, value}),
   )
 
@@ -22,7 +22,7 @@ const PieChartCustomAnalysis = props => {
           <Pie
             cx="70%"
             cy="40%"
-            data={data}
+            data={data2}
             startAngle={0}
             endAngle={360}
             innerRadius="40%"
@@ -51,7 +51,7 @@ const PieChartCustomAnalysis = props => {
             <Pie
               cx="70%"
               cy="40%"
-              data={data1}
+              data={data2}
               startAngle={0}
               endAngle={360}
               innerRadius="40%"
@@ -75,7 +75,7 @@ const PieChartCustomAnalysis = props => {
         </ResponsiveContainer>
       </div>
       <div>
-        <h1 className="piechar-text-style">Commits Per Repo</h1>
+        <h1 className="piechar-text-style">Commits Per Repo (Top 10)</h1>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie

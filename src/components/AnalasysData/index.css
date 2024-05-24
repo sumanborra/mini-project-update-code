@@ -151,3 +151,12 @@
 .darkLightt {
   border: #222835;
 }
+.analysis-avatar-image-container {
+  display: flex;
+  align-items: center;
+}
+.analysis-avtar-image{
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
