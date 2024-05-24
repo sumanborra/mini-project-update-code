@@ -33,7 +33,7 @@ class Home extends Component {
     this.setState({apiStatusValue: apiStatus.loading, isDetails: true})
     const {userName} = this.state
 
-    const url = `https://apis2.ccbp.in/gpv/profile-details/${userName}`
+    const url = `https://apis2.ccbp.in/gpv/profile-details/${userName}?api_key=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`
     const response = await fetch(url)
 
     const data = await response.json()
