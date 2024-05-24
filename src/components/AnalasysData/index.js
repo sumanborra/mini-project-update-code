@@ -24,7 +24,7 @@ const AnalasysData = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/profile-summary/${userName}?api_key=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`,
+      `https://apis2.ccbp.in/gpv/profile-summary/${userName}`,
     )
     const datare = await response.json()
 
