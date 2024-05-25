@@ -51,8 +51,8 @@ const AnalasysData = props => {
   }, [])
 
   const loadingView = () => (
-    <div data-testid="loader" className="repo-item">
-      <Loader type="TailSpin" height={50} width={50} color="#2bc5f0" />
+    <div data-testid='loader' className='repo-item'>
+      <Loader type='TailSpin' height={50} width={50} color='#2bc5f0' />
     </div>
   )
 
@@ -61,33 +61,33 @@ const AnalasysData = props => {
   }
 
   const failureView = () => (
-    <div className="no-profile-view">
+    <div className='no-profile-view'>
       <img
-        src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1712129835/Group_7522_ym73jg.png"
-        alt="failure view"
-        className="img-no-profile"
+        src='https://res.cloudinary.com/dq6jxocbv/image/upload/v1712129835/Group_7522_ym73jg.png'
+        alt='failure view'
+        className='img-no-profile'
       />
-      <p className="something-wrong-text">
+      <p className='something-wrong-text'>
         Something went wrong. Please try again
       </p>
-      <button type="button" className="try-again-button" onClick={recallApi}>
+      <button type='button' className='try-again-button' onClick={recallApi}>
         Try Again
       </button>
     </div>
   )
   const inValidUser = () => (
-    <div className="no-data-found-main-container">
+    <div className='no-data-found-main-container'>
       <img
-        src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187323/Empty_Box_Illustration_1_rgufro.png"
-        alt="empty analysis"
-        className="no-data-found-image"
+        src='https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187323/Empty_Box_Illustration_1_rgufro.png'
+        alt='empty analysis'
+        className='no-data-found-image'
       />
-      <h1 className="text-no-data-found">No Data Found</h1>
-      <p className="text-no-data-found-para">
+      <h1 className='text-no-data-found'>No Data Found</h1>
+      <p className='text-no-data-found-para'>
         GitHub username is empty, please provide a valid username for Analysis
       </p>
-      <Link to="/">
-        <button type="button" className="button-no-data-found">
+      <Link to='/'>
+        <button type='button' className='button-no-data-found'>
           Go to Home
         </button>
       </Link>
@@ -107,13 +107,13 @@ const AnalasysData = props => {
     return (
       <>
         {Object.keys(languagePerRepos).length === 0 && (
-          <div className="no-analysis-found-main-container">
+          <div className='no-analysis-found-main-container'>
             <img
-              src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187331/Layer_3_udr2er.png"
-              alt="no analysis"
-              className="no-analysis-found-image"
+              src='https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187331/Layer_3_udr2er.png'
+              alt='no analysis'
+              className='no-analysis-found-image'
             />
-            <p className="text-no-analysis">No Analysis Found!</p>
+            <p className='text-no-analysis'>No Analysis Found!</p>
           </div>
         )}
 
@@ -122,19 +122,19 @@ const AnalasysData = props => {
             className={`success-view-container-specific-item-details ${backgroundColorAnalysisPiechart}`}
           >
             <div>
-              <h1 className="languages-text-contributors">Analysis</h1>
-              <div className="analysis-avatar-image-container">
+              <h1 className='languages-text-contributors'>Analysis</h1>
+              <div className='analysis-avatar-image-container'>
                 <img
                   src={avatarUrl}
                   alt={login}
-                  className="analysis-avtar-image"
+                  className='analysis-avtar-image'
                 />
-                <h1 className="languages-text-contributors">{login}</h1>
+                <h1 className='languages-text-contributors'>{login}</h1>
               </div>
               <LinearChartData quarterCommitCount={quarterCommitCount} />
             </div>
             <div>
-              <h1 className="languages-text-contributors">
+              <h1 className='languages-text-contributors'>
                 Language Per Commits
               </h1>
               <PieChartCustomAnalysis
