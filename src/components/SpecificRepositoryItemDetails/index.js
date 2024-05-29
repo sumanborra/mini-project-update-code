@@ -22,7 +22,7 @@ const SpecificRepositoryItemDetails = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/specific-repo/${userName}/${repoName}?api_key=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`,
+      `https://apis2.ccbp.in/gpv/specific-repo/${userName}/${repoName}?api_key=`,
     )
     const datare = await response.json()
 
