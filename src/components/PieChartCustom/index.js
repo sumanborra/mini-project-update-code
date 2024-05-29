@@ -1,38 +1,55 @@
 import {PieChart, Pie, Legend, Cell, ResponsiveContainer} from 'recharts'
 import './index.css'
 
-const PieChartCustom = props => {
-  const {languages} = props
-  const data = languages.slice(0, 5)
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28']
+
+const RADIAN = Math.PI / 180
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5
+  const x = cx + radius * Math.cos(-midAngle * RADIAN)
+  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <PieChart>
-        <Pie
-          cx="70%"
-          cy="40%"
-          data={data}
-          startAngle={0}
-          endAngle={360}
-          innerRadius="40%"
-          outerRadius="70%"
-          dataKey="value"
-        >
-          <Cell name="JavaScript" fill="#fecba6" />
-          <Cell name="Python" fill="#b3d23f" />
-          <Cell name="HTML" fill="#a44c9e" />
-          <Cell name="C" fill="#e31bbe" />
-          <Cell name="C++" fill="#8c467f" />
-          <Cell name="Java" fill="#2691b5" />
-        </Pie>
-        <Legend
-          iconType="square"
-          layout="vertical"
-          verticalAlign="middle"
-          align="right"
-        />
-      </PieChart>
-    </ResponsiveContainer>
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? 'start' : 'end'}
+      dominantBaseline="central"
+    >
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
   )
 }
 
-export default PieChartCustom
+export default function Piechart(props) {
+  const {languages} = props
+  const data = languages.slice(0, 5)
+  return (
+    <PieChart width={400} height={400}>
+      <Pie
+        data={data}
+        cx={200}
+        cy={200}
+        labelLine={false}
+        label={renderCustomizedLabel}
+        outerRadius={80}
+        fill="#8884d8"
+        dataKey="value"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+      <Legend />
+    </PieChart>
+  )
+}

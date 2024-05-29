@@ -2,7 +2,7 @@ import AnalasysData from '../AnalasysData'
 import GithubContext from '../../context/GithubContext'
 import Header from '../Header'
 
-const AnalasysisContextUse = () => (
+const AnalasysisContextUse = props => (
   <GithubContext.Consumer>
     {value => {
       const {userName, isDarkMode} = value
@@ -10,7 +10,11 @@ const AnalasysisContextUse = () => (
       return (
         <>
           <Header />
-          <AnalasysData userName={userName} isDarkMode={isDarkMode} />
+          <AnalasysData
+            userName={userName}
+            isDarkMode={isDarkMode}
+            match={props}
+          />
         </>
       )
     }}

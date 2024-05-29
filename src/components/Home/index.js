@@ -33,11 +33,11 @@ class Home extends Component {
     this.setState({apiStatusValue: apiStatus.loading, isDetails: true})
     const {userName} = this.state
 
-    const url = `https://apis2.ccbp.in/gpv/profile-details/${userName}?api_key=`
+    const url = `https://apis2.ccbp.in/gpv/profile-details/${userName}?api_key=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`
     const response = await fetch(url)
 
     const data = await response.json()
-    console.log(data)
+
     if (response.ok === true) {
       const updateData = {
         avatarUrl: data.avatar_url,
@@ -74,7 +74,7 @@ class Home extends Component {
   }
 
   loadingView = () => (
-    <div data-testid="loader" className="repo-item">
+    <div testid="loader" className="repo-item">
       <Loader type="TailSpin" height={50} width={50} color="#2bc5f0" />
     </div>
   )
@@ -222,7 +222,7 @@ class Home extends Component {
                     placeholder="Enter github username"
                   />
                   <button
-                    data-testid="searchButton"
+                    testid="searchButton"
                     type="button"
                     className="button-search-icon"
                     onClick={this.clickButton}

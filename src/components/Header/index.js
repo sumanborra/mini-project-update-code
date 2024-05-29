@@ -42,7 +42,7 @@ const Header = () => {
                   {' '}
                   <li className="para-link">Home</li>
                 </Link>
-                <Link to="/repository" className="link-style">
+                <Link to="/repositories" className="link-style">
                   <li className="para-link">Repositories</li>
                 </Link>
                 <Link to="/analysis" className="link-style">
@@ -54,7 +54,7 @@ const Header = () => {
               <div className="nav-container-small-devices">
                 <Link to="/" className="link-style">
                   <h1 className="title-nav-section">
-                    Github Profile Visualizer
+                    GitHub Profile Visualizer
                   </h1>
                 </Link>
                 <button
@@ -78,7 +78,7 @@ const Header = () => {
                   <Link to="/" className="link-style">
                     <li className="para-link text-in-small-devices">Home</li>
                   </Link>
-                  <Link to="/repository" className="link-style">
+                  <Link to="/repositories" className="link-style">
                     <li className="para-link text-in-small-devices">
                       Repositories
                     </li>

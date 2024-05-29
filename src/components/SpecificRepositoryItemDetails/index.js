@@ -22,7 +22,7 @@ const SpecificRepositoryItemDetails = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/specific-repo/${userName}/${repoName}?api_key=`,
+      `https://apis2.ccbp.in/gpv/specific-repo/${userName}/${repoName}?api_key=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`,
     )
     const datare = await response.json()
 
@@ -38,6 +38,7 @@ const SpecificRepositoryItemDetails = props => {
         openIssueCount: datare.open_issues_count,
         stargazersCount: datare.stargazers_count,
         forksCount: datare.forks_count,
+        watchersCount: datare.watchers_count,
       }
 
       setRepositorLists(updateData)
@@ -51,7 +52,7 @@ const SpecificRepositoryItemDetails = props => {
   }, [])
 
   const loadingView = () => (
-    <div data-testid="loader" className="repo-item">
+    <div testid="loader" className="repo-item">
       <Loader type="TailSpin" height={50} width={50} color="#2bc5f0" />
     </div>
   )
@@ -67,7 +68,9 @@ const SpecificRepositoryItemDetails = props => {
         alt="failure view"
         className="img-no-profile"
       />
-      <p className="something-wrong-text">Something went wrong</p>
+      <p className="something-wrong-text">
+        Something went wrong. Please try again
+      </p>
       <button type="button" className="try-again-button" onClick={recallApi}>
         Try Again
       </button>
@@ -98,7 +101,7 @@ const SpecificRepositoryItemDetails = props => {
           <p className="count-text">{repostoryLists.stargazersCount}</p>
           <div className="contributors-count-container">
             <p className="count-text">Watchers Counts</p>
-            <p className="count-text">{repostoryLists.contributors.length}</p>
+            <p className="count-text">{repostoryLists.watchersCount}</p>
           </div>
           <div className="contributors-count-container">
             <p className="count-text">Issues Counts</p>

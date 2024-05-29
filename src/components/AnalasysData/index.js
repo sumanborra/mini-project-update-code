@@ -18,13 +18,14 @@ const AnalasysData = props => {
   const [apiStausValue, setApiStatusValue] = useState(apiStatus.initial)
   const [repostoryLists, setRepositorLists] = useState({})
   const {userName, isDarkMode} = props
+
   const backgroundColorAnalysis = isDarkMode === true ? 'dark' : ''
   const backgroundColorAnalysisPiechart =
     isDarkMode === true ? 'darkLightt' : ''
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/profile-summary/${userName}?api_key=`,
+      `https://apis2.ccbp.in/gpv/profile-summary/${userName}?api_key=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`,
     )
     const datare = await response.json()
 
@@ -37,7 +38,7 @@ const AnalasysData = props => {
         avatarUrl: datare.user.avatarUrl,
         login: datare.user.login,
       }
-      console.log(updateData)
+
       setRepositorLists(updateData)
       setApiStatusValue(apiStatus.success)
     } else if (datare.error_msg === 'Invalid username') {
@@ -50,8 +51,14 @@ const AnalasysData = props => {
     repositoryData()
   }, [])
 
+  const redirectHome = () => {
+    const {match} = props
+    const {history} = match
+    history.replace('/')
+  }
+
   const loadingView = () => (
-    <div data-testid="loader" className="repo-item">
+    <div testid="loader" className="repo-item">
       <Loader type="TailSpin" height={50} width={50} color="#2bc5f0" />
     </div>
   )
@@ -86,11 +93,14 @@ const AnalasysData = props => {
       <p className="text-no-data-found-para">
         GitHub username is empty, please provide a valid username for Analysis
       </p>
-      <Link to="/">
-        <button type="button" className="button-no-data-found">
-          Go to Home
-        </button>
-      </Link>
+
+      <button
+        type="button"
+        className="button-no-data-found"
+        onClick={redirectHome}
+      >
+        Go to Home
+      </button>
     </div>
   )
 
