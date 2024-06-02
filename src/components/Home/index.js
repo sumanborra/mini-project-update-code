@@ -165,9 +165,6 @@ class Home extends Component {
 
   failureView = () => (
     <div className="no-profile-view">
-      <p className="something-wrong-text-home-github">
-        Github Profile visualizer
-      </p>
       <img
         src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1712129835/Group_7522_ym73jg.png"
         alt="failure view"
@@ -234,9 +231,9 @@ class Home extends Component {
                 {errorMesg !== '' && <p className="error-mesg">*{errorMesg}</p>}
                 {isDetails === false && (
                   <div className="no-profile-view">
-                    <p className="something-wrong-text">
+                    <h1 className="something-wrong-text">
                       Github profile visualizer
-                    </p>
+                    </h1>
                     <img
                       src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187341/Group_2_err5xy.png"
                       alt="gitHub profile visualizer home page"

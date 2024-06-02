@@ -25,7 +25,7 @@ const AnalasysData = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/profile-summary/${userName}?api_key=`,
+      `https://apis2.ccbp.in/gpv/profile-summary/${userName}?api_key=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`,
     )
     const datare = await response.json()
 
@@ -116,6 +116,7 @@ const AnalasysData = props => {
 
     return (
       <>
+        <h1 className="languages-text-contributors">Analysis</h1>
         {Object.keys(languagePerRepos).length === 0 && (
           <div className="no-analysis-found-main-container">
             <img
@@ -132,7 +133,6 @@ const AnalasysData = props => {
             className={`success-view-container-specific-item-details ${backgroundColorAnalysisPiechart}`}
           >
             <div>
-              <h1 className="languages-text-contributors">Analysis</h1>
               <div className="analysis-avatar-image-container">
                 <img
                   src={avatarUrl}
