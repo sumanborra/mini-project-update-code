@@ -22,7 +22,7 @@ const SpecificRepositoryItemDetails = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/specific-repo/${userName}/${repoName}?api_key=`,
+      `https://apis2.ccbp.in/gpv/specific-repo/${userName}/${repoName}?api_key=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`,
     )
     const datare = await response.json()
 
@@ -52,8 +52,8 @@ const SpecificRepositoryItemDetails = props => {
   }, [])
 
   const loadingView = () => (
-    <div testid="loader" className="repo-item">
-      <Loader type="TailSpin" height={50} width={50} color="#2bc5f0" />
+    <div testid='loader' className='repo-item'>
+      <Loader type='TailSpin' height={50} width={50} color='#2bc5f0' />
     </div>
   )
 
@@ -62,16 +62,16 @@ const SpecificRepositoryItemDetails = props => {
   }
 
   const failureView = () => (
-    <div className="no-profile-view">
+    <div className='no-profile-view'>
       <img
-        src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1712129835/Group_7522_ym73jg.png"
-        alt="failure view"
-        className="img-no-profile"
+        src='https://res.cloudinary.com/dq6jxocbv/image/upload/v1712129835/Group_7522_ym73jg.png'
+        alt='failure view'
+        className='img-no-profile'
       />
-      <p className="something-wrong-text">
+      <p className='something-wrong-text'>
         Something went wrong. Please try again
       </p>
-      <button type="button" className="try-again-button" onClick={recallApi}>
+      <button type='button' className='try-again-button' onClick={recallApi}>
         Try Again
       </button>
     </div>
@@ -84,57 +84,57 @@ const SpecificRepositoryItemDetails = props => {
       <div
         className={`success-view-container-specific-item-details ${backgroundColorAnalysisPiechart}`}
       >
-        <h1 className="text-repository-name">{repostoryLists.name}</h1>
-        <p className="text-repository-description">
+        <h1 className='text-repository-name'>{repostoryLists.name}</h1>
+        <p className='text-repository-description'>
           {repostoryLists.description}
         </p>
-        <ul className="list-container-repositor-item-details">
+        <ul className='list-container-repositor-item-details'>
           {repostoryLists.languages.map(each => (
-            <li key={each.name} className="specific-item-details-list-item">
+            <li key={each.name} className='specific-item-details-list-item'>
               {' '}
               <p> {each.name}</p>
             </li>
           ))}
         </ul>
-        <div className="contributors-main-cout-container">
-          <p className="count-text">{repostoryLists.forksCount}</p>
-          <p className="count-text">{repostoryLists.stargazersCount}</p>
-          <div className="contributors-count-container">
-            <p className="count-text">Watchers Counts</p>
-            <p className="count-text">{repostoryLists.watchersCount}</p>
+        <div className='contributors-main-cout-container'>
+          <p className='count-text'>{repostoryLists.forksCount}</p>
+          <p className='count-text'>{repostoryLists.stargazersCount}</p>
+          <div className='contributors-count-container'>
+            <p className='count-text'>Watchers Counts</p>
+            <p className='count-text'>{repostoryLists.watchersCount}</p>
           </div>
-          <div className="contributors-count-container">
-            <p className="count-text">Issues Counts</p>
-            <p className="count-text">{repostoryLists.openIssueCount}</p>
+          <div className='contributors-count-container'>
+            <p className='count-text'>Issues Counts</p>
+            <p className='count-text'>{repostoryLists.openIssueCount}</p>
           </div>
         </div>
-        <div className="contributors-avatar-container">
-          <h1 className="count-text-title-contributors">Contributors</h1>
-          <p className="count-text">
+        <div className='contributors-avatar-container'>
+          <h1 className='count-text-title-contributors'>Contributors</h1>
+          <p className='count-text'>
             {repostoryLists.contributors.length} Members
           </p>
-          <div className="contributors-avatar-images-and-remaing-main-container">
-            <ul className="list-container-repositor-item-details">
+          <div className='contributors-avatar-images-and-remaing-main-container'>
+            <ul className='list-container-repositor-item-details'>
               {filterData.map(each => (
                 <li
                   key={each.id}
-                  className="specific-item-details-avtar-contributors"
+                  className='specific-item-details-avtar-contributors'
                 >
                   <img
                     src={each.avatarUrl}
-                    alt="contributor profile"
-                    className="contributors-images"
+                    alt='contributor profile'
+                    className='contributors-images'
                   />
                 </li>
               ))}
             </ul>
-            <div className="remaing-images-in-contributors">
+            <div className='remaing-images-in-contributors'>
               <p>+{repostoryLists.contributors.length - 5}</p>
             </div>
           </div>
         </div>
         <div>
-          <h1 className="languages-text-contributors">Languages</h1>
+          <h1 className='languages-text-contributors'>Languages</h1>
           <PieChartCustom languages={repostoryLists.languages} />
         </div>
       </div>
