@@ -12,7 +12,7 @@ const LinearChartData = props => {
 
   return (
     <LineChart
-      width={500}
+      width={800}
       height={300}
       data={data}
       margin={{

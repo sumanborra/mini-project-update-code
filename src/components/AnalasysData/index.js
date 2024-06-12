@@ -25,7 +25,7 @@ const AnalasysData = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/profile-summary/${userName}`,
+      `https://apis2.ccbp.in/gpv/profile-summary/${userName}?api_key=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`,
     )
     const datare = await response.json()
 
@@ -41,8 +41,6 @@ const AnalasysData = props => {
 
       setRepositorLists(updateData)
       setApiStatusValue(apiStatus.success)
-    } else if (datare.error_msg === 'Invalid username') {
-      setApiStatusValue(apiStatus.inValid)
     } else {
       setApiStatusValue(apiStatus.failure)
     }
@@ -79,27 +77,6 @@ const AnalasysData = props => {
       </p>
       <button type="button" className="try-again-button" onClick={recallApi}>
         Try Again
-      </button>
-    </div>
-  )
-  const inValidUser = () => (
-    <div className="no-data-found-main-container">
-      <img
-        src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187323/Empty_Box_Illustration_1_rgufro.png"
-        alt="empty analysis"
-        className="no-data-found-image"
-      />
-      <h1 className="text-no-data-found">No Data Found</h1>
-      <p className="text-no-data-found-para">
-        GitHub username is empty, please provide a valid username for Analysis
-      </p>
-
-      <button
-        type="button"
-        className="button-no-data-found"
-        onClick={redirectHome}
-      >
-        Go to Home
       </button>
     </div>
   )
@@ -167,8 +144,7 @@ const AnalasysData = props => {
         return failureView()
       case apiStatus.success:
         return successView()
-      case apiStatus.inValid:
-        return inValidUser()
+
       default:
         return null
     }
@@ -176,7 +152,29 @@ const AnalasysData = props => {
 
   return (
     <div className={`specific-repository ${backgroundColorAnalysis}`}>
-      {resultPage()}
+      {userName === '' && (
+        <div className="no-data-found-main-container">
+          <img
+            src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187323/Empty_Box_Illustration_1_rgufro.png"
+            alt="empty analysis"
+            className="no-data-found-image"
+          />
+          <h1 className="text-no-data-found">No Data Found</h1>
+          <p className="text-no-data-found-para">
+            GitHub username is empty, please provide a valid username for
+            Analysis
+          </p>
+
+          <button
+            type="button"
+            className="button-no-data-found"
+            onClick={redirectHome}
+          >
+            Go to Home
+          </button>
+        </div>
+      )}
+      {userName !== '' && resultPage()}
     </div>
   )
 }

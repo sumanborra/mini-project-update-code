@@ -24,7 +24,7 @@ const SpecificRepository = props => {
   const repositoryData = async () => {
     setApiStatusValue(apiStatus.loading)
     const response = await fetch(
-      `https://apis2.ccbp.in/gpv/repos/${userName}`,
+      `https://apis2.ccbp.in/gpv/repos/${userName}?api_key=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`,
     )
     const datare = await response.json()
     console.log(datare)
@@ -42,8 +42,6 @@ const SpecificRepository = props => {
 
       setRepositorLists(updateList)
       setApiStatusValue(apiStatus.success)
-    } else if (datare.error_msg === 'Invalid username') {
-      setApiStatusValue(apiStatus.inValid)
     } else {
       setApiStatusValue(apiStatus.failure)
     }
@@ -84,28 +82,7 @@ const SpecificRepository = props => {
       </button>
     </div>
   )
-  const inValidUser = () => (
-    <div className="no-data-found-main-container">
-      <img
-        src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187323/Empty_Box_Illustration_1_rgufro.png"
-        alt="empty repositories"
-        className="no-data-found-image"
-      />
-      <h1 className="text-no-data-found">No Data Found</h1>
-      <p className="text-no-data-found-para">
-        GitHub username is empty, please provide a valid username for
-        Repositories
-      </p>
 
-      <button
-        type="button"
-        className="button-no-data-found"
-        onClick={redirectHome}
-      >
-        Go to Home
-      </button>
-    </div>
-  )
   const successView = () => (
     <>
       <h1 className="text-repository">Repositories</h1>
@@ -151,8 +128,7 @@ const SpecificRepository = props => {
         return failureView()
       case apiStatus.success:
         return successView()
-      case apiStatus.inValid:
-        return inValidUser()
+
       default:
         return null
     }
@@ -162,7 +138,29 @@ const SpecificRepository = props => {
     <div
       className={`specific-repository-main-container ${backgroundRepositoriesColor}`}
     >
-      {resultPage()}
+      {userName === '' && (
+        <div className="no-data-found-main-container">
+          <img
+            src="https://res.cloudinary.com/dq6jxocbv/image/upload/v1716187323/Empty_Box_Illustration_1_rgufro.png"
+            alt="empty repositories"
+            className="no-data-found-image"
+          />
+          <h1 className="text-no-data-found">No Data Found</h1>
+          <p className="text-no-data-found-para">
+            GitHub username is empty, please provide a valid username for
+            Repositories
+          </p>
+
+          <button
+            type="button"
+            className="button-no-data-found"
+            onClick={redirectHome}
+          >
+            Go to Home
+          </button>
+        </div>
+      )}
+      {userName !== '' && resultPage()}
     </div>
   )
 }
